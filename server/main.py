@@ -17,4 +17,4 @@ def update():
         return ''
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', ssl_context=('/etc/letsencrypt/live/jellywx.co.uk/fullchain.pem', '/etc/letsencrypt/live/jellywx.co.uk/privkey.pem'))
+    app.run(debug=True, host='jellywx.co.uk', ssl_context=('/etc/letsencrypt/live/jellywx.co.uk/fullchain.pem', '/etc/letsencrypt/live/jellywx.co.uk/privkey.pem'))
