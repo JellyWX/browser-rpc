@@ -10,9 +10,11 @@ def update():
         return held.pop(request.headers['email'])
 
     elif request.method == 'POST':
+        print(request.json)
+
         held[request.headers['email']] = request.json
 
         return ''
 
 if __name__ == '__main__':
-    app.run(debug=True, ssl_context=('/etc/letsencrypt/live/jellywx.co.uk/fullchain.pem', '/etc/letsencrypt/live/jellywx.co.uk/privkey.pem'))
+    app.run(debug=True, host='0.0.0.0', ssl_context=('/etc/letsencrypt/live/jellywx.co.uk/fullchain.pem', '/etc/letsencrypt/live/jellywx.co.uk/privkey.pem'))
