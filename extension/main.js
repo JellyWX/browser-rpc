@@ -13,4 +13,4 @@ function update() {
   xhr.send(JSON.stringify({"state": window.location.href}))
 }
 
-setInterval(update, 15000)
+setInterval(update, 5000)

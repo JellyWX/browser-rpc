@@ -13,3 +13,6 @@ def update():
         held[request.headers['email']] = request.json
 
         return ''
+
+if __name__ == '__main__':
+    app.run(debug=True, ssl_context=('/etc/letsencrypt/live/jellywx.co.uk/fullchain.pem', '/etc/letsencrypt/live/jellywx.co.uk/privkey.pem'))
