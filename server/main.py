@@ -1,4 +1,5 @@
-from flask import Flask, request
+from flask import Flask, request, abort
+import json
 
 app = Flask(__name__)
 
@@ -7,7 +8,10 @@ held = {}
 @app.route('/', methods=['POST', 'GET'])
 def update():
     if request.method == 'GET':
-        return held.pop(request.headers['email'])
+        if request.headers['email'] in held.keys():
+            return json.dumps(held[request.headers['email']])
+        else:
+            abort(404)
 
     elif request.method == 'POST':
         print(request.json)
