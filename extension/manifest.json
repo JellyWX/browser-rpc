@@ -14,6 +14,10 @@
       "matches": ["<all_urls>"],
       "js": ["main.js"]
     }
+  ],
+
+  "permissions": [
+    "https://rpc.jellywx.co.uk/*"
   ]
 
 }
