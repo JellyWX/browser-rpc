@@ -5,9 +5,10 @@ function update() {
   console.log(window.location.href)
 
   var xhr = new XMLHttpRequest()
-  xhr.open('POST', 'https://rpc.jellywx.co.uk/')
+  xhr.open('POST', 'https://jellywx.co.uk:5000/')
 
   xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.setRequestHeader('email', 'judewrs@gmail.com')
 
   xhr.send(JSON.stringify({"state": window.location.href}))
 }

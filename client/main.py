@@ -25,7 +25,7 @@ activity = {
 
 while True:
 
-    r = requests.get('https://rpc.jellywx.co.uk/', json={'email' : email})
+    r = requests.get('https://jellywx.co.uk:5000/', headers={'email' : email})
 
     activity.update(r.json)
 
