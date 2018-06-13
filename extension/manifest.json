@@ -9,15 +9,14 @@
   "icons": {
   },
 
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["main.js"]
-    }
-  ],
+  "background": {
+    "scripts": ["main.js"]
+  },
+
 
   "permissions": [
-    "https://rpc.jellywx.co.uk/*"
+    "https://rpc.jellywx.co.uk/*",
+    "tabs"
   ]
 
 }

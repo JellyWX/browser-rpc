@@ -1,8 +1,6 @@
-document.body.style.border = "5px solid red";
-
-function update() {
+function update(tabInfo) {
   console.log('updating')
-  console.log(window.location.href)
+  console.log(tabInfo[0])
 
   var xhr = new XMLHttpRequest()
   xhr.open('POST', 'https://rpc.jellywx.co.uk/')
@@ -10,7 +8,17 @@ function update() {
   xhr.setRequestHeader('Content-Type', 'application/json')
   xhr.setRequestHeader('email', 'judewrs@gmail.com')
 
-  xhr.send(JSON.stringify({"state": window.location.href}))
+  xhr.send(JSON.stringify({"state": tabInfo[0].title}))
 }
 
-setInterval(update, 5000)
+function err(error) {
+  console.log(error)
+}
+
+function getTab() {
+  var current = browser.tabs.query({currentWindow: true, active: true})
+  current.then(update, err)
+}
+
+
+setInterval(getTab, 5000)
